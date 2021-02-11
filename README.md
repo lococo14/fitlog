@@ -14,28 +14,41 @@
 
 ## comments テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | text       | null: false                    |
-| user   | references | null: false, foreign_key: true |
-| log    | references | null: false, foreign_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| text               | text       | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| log                | references | null: false, foreign_key: true |
 
 ### Association
 --belongs_to :user
---belongs_to :logs
+--belongs_to :log
 
-## logs テーブル
+## training テーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| log                   | references | null: false, foreign_key: true |
+| weight_kg             | integer    | null: false                    |
+| weight_lb             | integer    | null: false                    |
+| rep                   | integer    | null: false                    |
+| set_number            | integer    | null: false                    |
+| training              | string     | null: false                    |
+
+### Association
+--belongs_to :log
+
+
+
+## log テーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |
 | title      | string     | null: false                    |
-| weight_kg  | integer    | null: false                    |
-| weight_lb  | integer    | null: false                    |
-| rep        | integer    | null: false                    |
-| set_number | integer    | null: false                    |
 | day_id     | integer    | null: false                    |
 
 ### Association
 --belongs_to :user
---has_many   :comments
+--has_many :comments
+--has_many :trainings

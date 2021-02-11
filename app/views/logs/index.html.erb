@@ -1,1 +1,24 @@
 <h1>top page</h1>
+
+<div class="row">
+ <% @logs.each do |log| %>
+ <div class="card" style="width: 18rem;"> 
+  <div class="card-header"> 
+    <span class="training-name"><%= log.title %></span><span class="day"><span>の日</span></span>
+    <%= log.day.name %><span>曜日</span>
+    </div> 
+  <ul class="list-group list-group-flush"> 
+  <% @trainings.each do |training| %>
+    <li class="list-group-item"> 
+    <%= training.training %>
+    <%= training.weight_kg %><span>kg</span>
+    <%= training.weight_lb %><span>lb</span>
+    <%= training.rep %><span>回</span>
+    <%= training.set_number %><span>セット</span>
+     </li> 
+  <% end %>
+  </ul> 
+  </div> 
+ <% end %>
+ </div> 
+
