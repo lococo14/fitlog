@@ -10,4 +10,5 @@ class Training < ApplicationRecord
   end
 
   belongs_to :log
+ 
 end

@@ -1,0 +1,16 @@
+<div class="nested-fields">
+  <%= f.text_field :training, placeholder:"種目",class: :form__text %>
+  <%= f.text_field :weight_kg, placeholder:"重量",class: 'weight form__text' %><span>kg</span>
+  <%= f.text_field :weight_lb, class: 'weight-lb'%>
+  <%= f.text_field :rep, placeholder: "回数" %>
+  <%= f.text_field :set_number, placeholder: "セット数" %>
+  <%= link_to_remove_association '-', f, class: "remove-association-btn" %>
+</div>
+
+
+    <%# <span class="pound-content">
+    <span class='weight-pound-number'></span>lb
+    </span> %>
+  <%# <div class="#">
+    <%= f.hidden_field :weight_lb, id: "f_weight" %>
+  <%# </div>  %> 

@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_02_08_092244) do
     t.bigint "user_id", null: false
     t.string "title", null: false
     t.integer "day_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 

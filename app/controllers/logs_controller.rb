@@ -2,8 +2,7 @@ class LogsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @logs = Log.all.includes(:user).order('id DESC')
-    @trainings = Training.all.includes(:log)
+    @logs = Log.all.includes([:user, :trainings]).order('created_at DESC')
   end
 
   def new
@@ -23,7 +22,16 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:title, :day_id,
-                                trainings_attributes: [:id, :log_id, :training, :weight_kg, :weight_lb, :rep, :set_number, :_destroy]).merge(user_id: current_user.id)
+    params.require(:log).permit(
+      :title,
+      :day_id,
+      trainings_attributes: [
+        :id,
+        :training,
+        :weight_kg, 
+        :weight_lb, 
+        :rep, 
+        :set_number, 
+        :_destroy]).merge(user_id: current_user.id)
   end
 end

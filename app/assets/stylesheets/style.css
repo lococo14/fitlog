@@ -323,7 +323,35 @@
    display: none !important;
  }
  /*# sourceMappingURL=bootstrap-reboot.css.map */
+
+
+ body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
  
+main{
+  background-color: #ffffff;
+  flex: 1;
+}
+
+footer{
+  background-color: #333333;
+  color: #ffffff;
+  height: 40px;
+  text-align: center;
+}
+
+.navbar{
+  height: 65px;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+.navbar.navbar-expand-lg.navbar-light{
+  color: white;
+}
 
 h1{
   float: left;

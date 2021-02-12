@@ -1,46 +1,16 @@
  
-  <h2 class="page-heading">新規投稿</h2>
-        
+  <h2 class="page-heading">新規投稿</h2> 
     <%= form_with model: @log , local: true  do |f| %>
-    <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？" %>
-        
+    <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？" %> 
     <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box", id:"item-category"}) %>
     <span>曜日</span>
-    
+    <div class="add_logs">
     <%= f.fields_for :trainings, @log.trainings.build do |form| %>
-  
-  <div id= "form_field">
-    <div id="input_box">
-    <%= form.text_field :training, placeholder:"種目",class: :form__text %>
-    
-
-  
-    <%= form.text_field :weight_kg, placeholder:"重量",class: :form__text %><span>kg</span>
-
-  
-    
-      <span class="pound-content">
-      <span id='weight-pound-number'></span>lb
-      </span>
-     
-
-    <div class="#">
-     <%= form.hidden_field :weight_lb, id: "f_weight" %>
-    </div> 
-  
-    
-    <%= form.text_field :rep, placeholder: "回数" %>
-  
-
-
-  
-    <%= form.text_field :set_number, placeholder: "セット数" %>
-    <input type="button" value="＋" class="add pluralBtn">
-    <input type="button" value="－" class="del pluralBtn">
+    <%= render 'logs/log_form', {f:form} %>
+    <div class="append_logs"></div>
+    <div class="links">
+    <%=link_to_add_association '追加', f, :trainings, partial: 'logs/log_form',data: { association_insertion_method: 'append' }, class: 'add_btn' %>
     </div>
-   </div>  
-  </div>
-
+   <% end %>
   <%= f.submit "保存する", class: :form__btn, id: "submit"  %>
-  <% end %>
 <% end %>
