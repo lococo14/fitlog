@@ -1,24 +1,24 @@
-
 <div class="container">
- <div class="row">
-  <% @logs.each do |log| %>
-  <div class="card" style="width: 18rem;"> 
-  <div class="card-header"> 
-    <span class="training-name"><%= log.title %></span><span class="day"><span>の日</span></span>
-    <%= log.day.name %><span>曜日</span>
-    </div> 
-  <ul class="list-group list-group-flush"> 
-  <% log.trainings.each do |training| %>
-    <li class="list-group-item"> 
-    <%= training.training %>
-    <%= training.weight_kg %><span>kg</span>
-    <%= training.weight_lb %><span>lb</span>
-    <%= training.rep %><span>回</span>
-    <%= training.set_number %><span>セット</span>
-     </li> 
-  <% end %> 
-  </ul> 
+  <div class="row">
+    <% @logs.each do |log| %>
+      <div class="card" style="width: 18rem;"> 
+      <div class="card-header"> 
+      <span class="training-name"><%= link_to log.title, log_path(log[:id]), method: :get, class: 'log-title' %>の日</span>
+      <span class="training-day">（<%= log.day.name %>）</span>
+      <span class="user-name">by <%= link_to "#{log.user.nickname}", '#', class: 'log-user'%></span>
   </div> 
- <% end %>
- </div> 
+    <ul class="list-group list-group-flush"> 
+    <% log.trainings.each do |training| %>
+      <li class="list-group-item"> 
+        <%= training.training %>
+        <%= training.weight_kg %><span>kg</span>
+        <%= training.weight_lb %><span>lb</span>
+        <%= training.rep %><span>回</span>
+        <%= training.set_number %><span>セット</span>
+     </li> 
+    </ul>  
+    <% end %> 
+  </div> 
+<% end %>
+</div> 
 </div>
