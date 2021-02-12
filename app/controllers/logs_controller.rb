@@ -1,5 +1,7 @@
 class LogsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :find_log, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @logs = Log.all.includes(
@@ -21,15 +23,12 @@ class LogsController < ApplicationController
   end
  
   def show
-    @log = Log.find(params[:id])
   end
 
   def edit
-    @log = Log.find(params[:id])
   end  
 
   def update
-    @log = Log.find(params[:id])
     if @log.update(log_params)
       redirect_to action: :show
     else
@@ -38,7 +37,6 @@ class LogsController < ApplicationController
   end  
   
   def destroy
-    @log = Log.find(params[:id])
     if current_user.id == @log.user_id && @log.destroy
       redirect_to root_path
     end  
@@ -59,4 +57,14 @@ class LogsController < ApplicationController
         :set_number, 
         :_destroy]).merge(user_id: current_user.id)
   end
+
+  def find_log
+    @log = Log.find(params[:id])
+  end  
+
+  def move_to_index
+    log = Log.find(params[:id])
+    redirect_to action: :index unless user_signed_in? && current_user.id == log.user_id
+  end  
+
 end
