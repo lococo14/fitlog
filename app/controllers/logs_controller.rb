@@ -2,7 +2,8 @@ class LogsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @logs = Log.all.includes([:user, :trainings]).order('created_at DESC')
+    @logs = Log.all.includes(
+      [:user, :trainings]).order('created_at DESC')
   end
 
   def new
@@ -18,6 +19,30 @@ class LogsController < ApplicationController
       render :new
     end
   end
+ 
+  def show
+    @log = Log.find(params[:id])
+  end
+
+  def edit
+    @log = Log.find(params[:id])
+  end  
+
+  def update
+    @log = Log.find(params[:id])
+    if @log.update(log_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end     
+  end  
+  
+  def destroy
+    @log = Log.find(params[:id])
+    if current_user.id == @log.user_id && @log.destroy
+      redirect_to root_path
+    end  
+  end  
 
   private
 

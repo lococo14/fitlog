@@ -1,0 +1,33 @@
+<table class="table border">
+  <thead class="thead-light">
+    <tr>
+       <th scope="col">#</th>
+       <th scope="col">
+          <span class="training-name"><%= @log.title %>の日</span>
+          <span class="training-day">(<%= @log.day.name %>)</span>
+      　   by <%= link_to "#{@log.user.nickname}", '#', class: 'user-name'%>
+          <% if user_signed_in? && current_user.id == @log.user_id%>
+          <div class="training-manage">
+            <%= link_to '編集する', edit_log_path(@log[:id]) , method: :get, class: 'log-btn' %>
+            <%= link_to '削除する', log_path(@log[:id]) , method: :delete, class: 'log-btn' %>
+          </div>
+          <% end %>  
+      </th>
+    </tr>
+  </thead>
+   <tbody>
+    <% @log.trainings.each do |training| %>
+    <tr>
+      <th scope="row">・</th>
+      <td>
+        <%= training.training %>
+        <%= training.weight_kg %><span>kg</span>
+        <%= training.weight_lb %><span>lb</span>
+        <%= training.rep %><span>回</span>
+        <%= training.set_number %><span>セット</span> 
+      　</td>
+       </tr>
+    <% end %>  
+  </tbody> 
+</table>
+
