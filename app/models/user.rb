@@ -6,9 +6,12 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :gender_id 
-  end     
-  
+    validates :gender_id
+  end
+
+  has_many :logs, dependent: :destroy
+  has_many :trainings
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
 end
