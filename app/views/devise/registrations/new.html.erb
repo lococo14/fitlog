@@ -1,8 +1,9 @@
 <div class="contents row">
   <div class="container">
     <h2>Sign up</h2>
+      <%= render 'devise/shared/error_messages', model: @user %>
+
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
 
       <div class="field">
         <%= f.label :nickname %><em>(6 characters maximum)</em><br />
@@ -45,4 +46,4 @@
   </div>
 </div>
 
-<%= render "devise/shared/links" %>
+<%# <%= render "devise/shared/links" %>  
