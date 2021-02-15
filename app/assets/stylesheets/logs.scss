@@ -1,33 +1,8 @@
 // Place all the styles related to the logs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-<<<<<<< Updated upstream
-=======
-
-
-body {
-  margin: 0;
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-}
- 
-
-main{
-  background-color: #ffffff;
-  flex: 1;
-}
-
 
 // エラーメッセージ
-
-.field_with_errors {
-  display: contents;
-   input{
-     @extend .is-invalid
-   }
-}
-
 .error-alert {
   display: flex;
   justify-content: left;
@@ -45,6 +20,7 @@ main{
   color: red;
 }
 
+
 // ヘッダー
 .navbar{
   height: 75px;
@@ -58,5 +34,3 @@ footer{
   height: 40px;
   text-align: center;
 }
-
->>>>>>> Stashed changes
