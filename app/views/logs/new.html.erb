@@ -1,5 +1,5 @@
- 
-  <h2 class="page-heading">新規投稿</h2> 
+ <h2 class="page-heading">新規投稿</h2> 
+     <%= render 'devise/shared/error_messages', model: @log%>
     <%= form_with model: @log , local: true  do |f| %>
     <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？" %> 
     <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box", id:"item-category"}) %>
