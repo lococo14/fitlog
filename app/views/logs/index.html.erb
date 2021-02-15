@@ -1,12 +1,8 @@
 <div class="container">
   <div class="row">
-    <% @logs.each do |log| %>
-      <div class="card" style="width: 18rem;"> 
-      <div class="card-header"> 
-      <span class="training-name"><%= link_to log.title, log_path(log[:id]), method: :get, class: 'log-title' %>の日</span>
-      <span class="training-day">（<%= log.day.name %>）</span>
-      <span class="user-name">by <%= link_to "#{log.user.nickname}", '#', class: 'log-user'%></span>
+      <%= render partial: "log", collection: @logs %>
   </div> 
+<<<<<<< Updated upstream
     <ul class="list-group list-group-flush"> 
     <% log.trainings.each do |training| %>
       <li class="list-group-item"> 
@@ -22,3 +18,8 @@
 <% end %>
 </div> 
 </div>
+=======
+</div>
+
+
+>>>>>>> Stashed changes

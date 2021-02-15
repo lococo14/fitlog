@@ -5,7 +5,8 @@ class LogsController < ApplicationController
 
   def index
     @logs = Log.all.includes(
-      [:user, :trainings]).order('created_at DESC')
+      [:user, :trainings]
+    ).order('created_at DESC')
   end
 
   def new
@@ -21,26 +22,26 @@ class LogsController < ApplicationController
       render :new
     end
   end
- 
+
   def show
+    @comment = Comment.new
+    @comments = @log.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
-  end  
+  end
 
   def update
     if @log.update(log_params)
       redirect_to action: :show
     else
       render :edit
-    end     
-  end  
-  
+    end
+  end
+
   def destroy
-    if current_user.id == @log.user_id && @log.destroy
-      redirect_to root_path
-    end  
-  end  
+    redirect_to root_path if current_user.id == @log.user_id && @log.destroy
+  end
 
   private
 
@@ -51,20 +52,21 @@ class LogsController < ApplicationController
       trainings_attributes: [
         :id,
         :training,
-        :weight_kg, 
-        :weight_lb, 
-        :rep, 
-        :set_number, 
-        :_destroy]).merge(user_id: current_user.id)
+        :weight_kg,
+        :weight_lb,
+        :rep,
+        :set_number,
+        :_destroy
+      ]
+    ).merge(user_id: current_user.id)
   end
 
   def find_log
     @log = Log.find(params[:id])
-  end  
+  end
 
   def move_to_index
     log = Log.find(params[:id])
     redirect_to action: :index unless user_signed_in? && current_user.id == log.user_id
-  end  
-
+  end
 end
