@@ -5,7 +5,7 @@
        <th scope="col">
           <span class="training-name"><%= @log.title %>の日</span>
           <span class="training-day">(<%= @log.day.name %>)</span>
-      　   by <%= link_to "#{@log.user.nickname}", user_path(@log.user_id), class: 'user-name'%>
+          by <%= link_to "#{@log.user.nickname}", user_path(@log.user_id), class: 'user-name'%>
           <% if user_signed_in? && current_user.id == @log.user_id%>
           <div class="training-manage">
             <%= link_to '編集する', edit_log_path(@log[:id]) , method: :get, class: 'log-btn' %>
@@ -25,7 +25,7 @@
         <%= training.weight_lb %><span>lb</span>
         <%= training.rep %><span>回</span>
         <%= training.set_number %><span>セット</span> 
-      　</td>
+       </td>
        </tr>
     <% end %>  
   </tbody> 
