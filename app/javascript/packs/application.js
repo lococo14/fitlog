@@ -1,5 +1,5 @@
 import 'bootstrap';
-import '../stylesheets/application';
+import '../src/application';
 
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -9,7 +9,6 @@ import '../stylesheets/application';
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-require("../weight_pound")
 var jQuery = require('jquery')
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;

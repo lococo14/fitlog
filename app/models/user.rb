@@ -10,7 +10,7 @@ class User < ApplicationRecord
   end
 
   has_many :logs, dependent: :destroy
-  has_many :trainings
+  has_many :comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
