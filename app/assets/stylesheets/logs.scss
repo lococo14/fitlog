@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // エラーメッセージ
+
+.field_with_errors {
+  display: contents;
+  input {
+    @extend .is-invalid;
+  }
+}
+
 .error-alert {
   display: flex;
   justify-content: left;
@@ -20,17 +28,243 @@
   color: red;
 }
 
+body{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  
+}
+
+main{
+  background-color: #f0efef;
+  flex: 1;
+  padding-top: 75px;
+}
+
+// index
+.top-container{
+  background-image: image-url('fit1.jpg');
+  height: 800px;
+  background-size: cover;
+  margin-bottom: 80px;
+  text-align: right;
+  padding-top: 280px;
+  padding-bottom: 100px;
+}
+
+.top-container h1{
+  font-size: 75px;
+  color: tomato;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+.top-container h2{
+  color: darkgrey;
+  letter-spacing: 3px;
+}
+
+.top-container p{
+  color: ＃1e212d;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.container{
+  margin-bottom: 60px;
+  display: flex;
+}
+
+.heading-index{
+  text-align: center;
+  color:tomato;
+  margin-bottom: 30px;
+  border-bottom: 5px solid tomato;
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+a, a:visited, a:focus, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  opacity: 0.7;
+}
+
+// new
+
+.new-main{
+  background-image: image-url('gym.jpg');
+  background-size: cover;
+}
+.page-heading{
+  margin-left: 40px;
+  margin-top: 10px;
+  color: red;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: bold;
+  border-bottom: 2px solid tomato;
+}
+.new-log-form{
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.form-row{
+  margin-bottom: 20px;
+}
+.btn--red.btn--cubic {
+  color:white;
+  background-color: red;
+  border-bottom: 5px solid #9f000c;
+}
+
+.btn--red.btn--cubic:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #9f000c;
+}
+
+.btn--radius {
+  border-radius: 100vh;
+}
+
+.btn-circle{
+  border-radius: 30px;
+  padding: 10px 15px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+  border-bottom: 5px solid #b84c00;
+  width: 180px;
+  border-radius: 20px;
+}
+.btn--orange:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #f56500;
+  border-bottom: 2px solid #b84c00;
+}
+.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.links{
+ display: inline-block;
+ margin-top: 20px;
+ margin-right: 20px;
+}
+
+
+// show
+
+.show-main{
+  background-image: image-url('mypage.jpg');
+  background-size: 100%;
+  background-position: 0px 0px;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
+
+.table{
+  width: 50%;
+  margin-top: 30px;
+  margin-left: 30px;
+  border: tomato solid 2px;
+}
+
+.log-comments{
+  margin-left: 30px;
+  margin-top: 200px;
+}
+
+.comment-heading{
+  color: tomato;
+  font-weight: bold;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 35px;
+  border-bottom: tomato solid 2px;
+}
+
+.comment{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.comments-list{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+.comment-list{
+  border: tomato solid 1px;
+  padding:10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+li{
+  list-style: none;
+}
+
+.user-comment{
+  margin-left: 30px;
+}
+
+.training-text{
+  display: inline-block;
+  margin-right: 10px;
+  color: gray;
+}
+.user-name{
+  color: gray;
+}
+
+.user-main{
+  background-image: image-url('bike.jpg');
+  background-size: 100%;
+  background-position: 0px 0px;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+}
+
+
+// ログイン、新規登録
+
+.devise-main{
+  
+}
 
 // ヘッダー
 .navbar{
   height: 75px;
+  background-color: rgba(34, 49, 52, 0.9);
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
 }
+
+
 
 // フッター
 
 footer{
-  background-color: #333333;
+  background-color:  rgba(34, 49, 52, 0.9);
   color: #ffffff;
   height: 40px;
   text-align: center;
+  margin-top: 3px;
+  padding-top: 5px;
 }

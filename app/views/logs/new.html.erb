@@ -1,16 +1,28 @@
- <h2 class="page-heading">新規投稿</h2> 
-     <%= render 'devise/shared/error_messages', model: @log%>
-    <%= form_with model: @log , local: true  do |f| %>
-    <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？" %> 
-    <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box", id:"item-category"}) %>
-    <span>曜日</span>
-    <div class="add_logs">
-    <%= f.fields_for :trainings, @log.trainings.build do |form| %>
-    <%= render 'logs/log_form', {f:form} %>
-    <div class="append_logs"></div>
-    <div class="links">
-    <%=link_to_add_association '追加', f, :trainings, partial: 'logs/log_form',data: { association_insertion_method: 'append' }, class: 'add_btn' %>
-    </div>
-   <% end %>
-  <%= f.submit "保存する", class: :form__btn, id: "submit"  %>
-<% end %>
+<%= render "header"%>
+<main class="new-main">
+ <h2 class="page-heading">NEW LOG</h2> 
+  <%= render 'devise/shared/error_messages', model: @log%>
+    <div class="new-log-form">
+      <%= form_with model: @log , local: true  do |f| %>
+       <form>
+        <div class="form-row">
+        <div class="col-7">
+          <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？", class: 'form-control' %> 
+          </div>  
+          <div class="col-2">
+            <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box form-control", id:"item-category"}) %>
+          </div>
+         </div> 
+      <div class="add_logs">
+      <%= f.fields_for :trainings, @log.trainings.build do |form| %>
+      <%= render 'logs/log_form', {f:form} %>
+      <div class="append_logs"></div>
+      <div class="links">
+      <%=link_to_add_association 'ADD', f, :trainings, partial: 'logs/log_form',data: { association_insertion_method: 'append' }, class: 'btn btn--red btn--radius btn--cubic ' %>
+      </div>
+    <% end %>
+    <%= f.submit "SEND", class: 'btn btn--orange btn--cubic btn--shadow', id: "submit"  %></span>
+    <% end %>
+   </form> 
+   </div> 
+</main>

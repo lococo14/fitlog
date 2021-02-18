@@ -1,5 +1,18 @@
-<div class="container">
-  <div class="row">
-      <%= render partial: "log", collection: @logs %>
-  </div> 
+<%= render "header"%>
+<%= render 'layouts/flash_messages' %>
+<main>
+<div class="top-container">
+  <div class="title-container">
+  <h1>LOG TO BE FIT.</h1>
+  <h2>THE MORE YOU LOG, </br>THE MORE YOU GET FIT.</h2>
+  <p>FIT LOGは、筋トレ記録アプリです。
+  </p>
+  </div>
 </div>
+ <div class="heading-index"><h2>New Logs</h2></div>
+  <div class="container">
+    <div class="row ">
+        <%= render partial: "log", collection: @logs %>
+    </div> 
+  </div>
+</main> 

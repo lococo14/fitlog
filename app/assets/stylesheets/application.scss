@@ -1,4 +1,25 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 @import "logs";
+
+
+.mw-md {
+  max-width: 576px;
+}
+.mw-xl {
+  max-width: 1200px;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}

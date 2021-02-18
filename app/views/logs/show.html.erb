@@ -1,15 +1,20 @@
-<table class="table border">
-  <thead class="thead-light">
-    <tr>
-       <th scope="col">#</th>
+<%= render "logs/header" %>
+<main class="show-main">
+<table class="table table-bordered border-danger">
+  <thead class="thead">
+    <tr class="table-danger">  
        <th scope="col">
-          <span class="training-name"><%= @log.title %>の日</span>
-          <span class="training-day">(<%= @log.day.name %>)</span>
-          by <%= link_to "#{@log.user.nickname}", user_path(@log.user_id), class: 'user-name'%>
+          <div class="training-table"><span class="training-name"><%= @log.title %>の日</span>
+          <span class="training-day">(<%= @log.day.name %>)</span></div>
+          by <%= link_to "#{@log.user.nickname}", user_path(@log.user_id), class: 'user-name text-muted'%>
           <% if user_signed_in? && current_user.id == @log.user_id%>
           <div class="training-manage">
-            <%= link_to '編集する', edit_log_path(@log[:id]) , method: :get, class: 'log-btn' %>
-            <%= link_to '削除する', log_path(@log[:id]) , method: :delete, class: 'log-btn' %>
+            <%= link_to edit_log_path(@log[:id]) , class:'btn btn-sm btn-secondary text-white', method: :get do %>
+              <i class="fas fa-pen "></i>
+             <% end %>
+            <%= link_to log_path(@log[:id]) , class: "btn btn-sm btn-danger text-white", method: :delete do %>
+              <i class="far fa-trash-alt"></i> 
+            <% end %>  
           </div>
           <% end %>  
       </th>
@@ -17,38 +22,41 @@
   </thead>
    <tbody>
     <% @log.trainings.each do |training| %>
-    <tr>
-      <th scope="row">・</th>
+    <tr class="border-danger">
       <td>
-        <%= training.training %>
-        <%= training.weight_kg %><span>kg</span>
-        <%= training.weight_lb %><span>lb</span>
-        <%= training.rep %><span>回</span>
-        <%= training.set_number %><span>セット</span> 
+        <div class="title-text"><strong><%= training.training %></strong></div>
+        <div class="training-text"><%= training.weight_kg %><span>kg</span></div>
+        <div class="training-text"><%= training.weight_lb  %><span>lb</span></div>
+        <div class="training-text"><%= training.rep %><span>回</span></div>
+        <div class="training-text"><%= training.set_number %><span>セット</span></div>
        </td>
        </tr>
     <% end %>  
   </tbody> 
 </table>
-
 <div class="log-comments">
   <% if user_signed_in? %>
-  <%= form_with model:[@log,@comment ], local: true do |f| %>
+  <%= form_with model:[@log,@comment], local: true do |f| %>
   <div class="field">
-    <%= f.label :text, "コメント" %><br />
-    <%= f.text_field :text %>
+   <div class="comment-heading"> 
+    <%= f.label :text, "comment"  %><br />
+   </div> 
+    <%= f.text_area :text, class: 'form-control comment', placeholder:'コメントする', rows: "3" %>
   </div>
   <div class="actions">
-  <%= f.submit "送信", class: 'form-btn' %>
+  <%= f.submit "送信", class: 'btn btn--orange btn--cubic btn--shadow' %>
   </div>
   <% end %>
   <% end %>
     <ul class="comments-list">
     <% @comments.each do |comment| %>  
-      <li class="comments-list" >
+      <li class="comment-list" >
+      <p>
        <%= comment.text %>
-       <%= link_to comment.user.nickname, user_path(comment.user.id), class: 'comment-user' %> 
+       <strong><span class="user-comment">by <%= link_to comment.user.nickname, user_path(comment.user.id), class: 'comment-user' %> </span></strong>
+      </p>
      </li>
    <% end %>    
   </ul> 
 </div>
+</main>

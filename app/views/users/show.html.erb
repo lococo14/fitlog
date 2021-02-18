@@ -1,10 +1,12 @@
-<div class="main">
+<%= render "logs/header"%>
+<main class="user-main">
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報"%>
+        <%= "#{@user.nickname}'s profile "%>
       </h2>
-      <table class="table">
+      <div class="profile">
+      <table class="table table-borderd table-danger">
         <tbody>
           <tr>
             <th class="table__col1">名前</th>
@@ -20,14 +22,15 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      </div >
       <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿一覧"%>
+        <%= "#{@user.nickname}'s logs "%>
       </h2>
       <div class="container">
       <div class="row">
       <%= render partial: "logs/log", collection: @logs %>
       </div>
-      </div >
     </div>
   </div>
-</div>
+</main>
