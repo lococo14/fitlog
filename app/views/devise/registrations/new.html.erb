@@ -1,13 +1,11 @@
 <%= render "logs/header"%>
-<main class="devise-main">
-<div class="contents row">
-  <div class="container">
-  <form>
-    <h1><%= t('.sign_up') %></h1>   
-       <%= render 'devise/shared/error_messages', model: @user %>
-
+<main>
+<div class="container-signup shadow-lg">
+   <h2 class="login-heading">Sign Up</h2>   
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-
+     <form>
+     <%= render 'devise/shared/error_messages', model: @user%>
+     <div class='form-group'>
       <div class="mb-3">
         <%= f.label :nickname %><em>(6 characters maximum)</em><br />
         <%= f.text_field :nickname, autofocus: true , class: 'form-control'%>
@@ -37,7 +35,7 @@
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>
 
-      <div class="field">
+      <div class="mb-3">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
       </div>
@@ -45,9 +43,9 @@
       <div class="actions">
         <%= f.submit "Sign up" , class: 'btn btn-danger btn-block mt-3' %>
       </div>
-    <% end %>
+      <% end %>
+     </div>
     </form>
   </div>
 </div>
 </main>
-<%# <%= render "devise/shared/links" %>   

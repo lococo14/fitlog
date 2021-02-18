@@ -1,10 +1,10 @@
 <%= render "logs/header"%>
-<main class="devise-main">
-<div class="contents row">
-  <div class="container">
-  <form>
- <h1><%= t('.sign_in') %></h1>   
-  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+<main>
+  <div class="container-login shadow-lg">
+   <h2 class="login-heading">Log In</h2>   
+    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <form>
+     <div class='form-group'>
       <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
@@ -28,10 +28,10 @@
 
       <div class="actions">
         <%= f.submit "Log in", class: 'btn btn-danger btn-block' %>
-        <%# <%= render "devise/shared/links" %>  
       </div>
     <% end %>
-    </form>
+    </div>
+   </form>
   </div>
 </div>
 </main>

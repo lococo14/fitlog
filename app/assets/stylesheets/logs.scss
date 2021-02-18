@@ -239,11 +239,32 @@ li{
   background-repeat: repeat-x;
 }
 
-
 // ログイン、新規登録
 
-.devise-main{
-  
+.container-login{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: tomato solid 2px;
+  padding: 30px 20px 90px 20px;
+  background-color:#FFC0CB;
+}
+.container-signup{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border: tomato solid 2px;
+  padding: 30px 20px 90px 20px;
+  background-color:#FFC0CB;
+}
+
+.login-heading{
+  color: tomato;
+  margin-bottom: 30px;
+  border-bottom: 5px solid tomato;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 // ヘッダー
