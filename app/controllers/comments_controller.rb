@@ -4,12 +4,16 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.valid?
-      @comment.save
-      redirect_to log_path(@comment.log)
+       @comment.save
+       redirect_to log_path(@comment.log)
     else
-      render 'logs/show'
+      @log = @comment.log
+      @comments = @log.comments
+      render template: "logs/show"
     end
   end
+   
+  
 
   private
 

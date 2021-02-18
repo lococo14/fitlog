@@ -1,33 +1,38 @@
+<%= render "logs/header"%>
+<main class="devise-main">
 <div class="contents row">
   <div class="container">
-    <h2>Log in</h2>
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+  <form>
+ <h1><%= t('.sign_in') %></h1>   
+  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
-      <div class="field">
+      <div class="mb-3">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control',id: "exampleInputEmail1"%>
       </div>
 
-      <div class="field">
+      <div class="mb-3">
         <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control',id: "exampleInputPassword1" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
+        <div class="mb-3 form-check">
+          <%= f.check_box :remember_me, class: "form-check-input" ,id:"exampleCheck1" %>
+           <%= f.label :remember_me %>
         </div>
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "Log in", class: 'btn btn-danger btn-block' %>
+        <%# <%= render "devise/shared/links" %>  
       </div>
     <% end %>
+    </form>
   </div>
 </div>
+</main>
 
-<%# <%= render "devise/shared/links" %> 
