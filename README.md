@@ -4,7 +4,8 @@ Fitlogは、筋トレを記録し投稿できるアプリです。
  
 
 # DEMO
- 
+ ![Untitled](https://user-images.githubusercontent.com/70187032/108463437-bb350200-72c1-11eb-94bd-c33637f3c4fe.gif)
+
 
  
 # Features
