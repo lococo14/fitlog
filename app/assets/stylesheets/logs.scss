@@ -160,6 +160,15 @@ a:hover{
  margin-right: 20px;
 }
 
+.pagination{
+  justify-content: center;
+}
+
+
+.page-item.active .page-link{
+  background-color: tomato;
+  border-color: tomato;
+}
 
 // show
 
@@ -237,6 +246,16 @@ li{
   background-position: 0px 0px;
   background-attachment: fixed;
   background-repeat: repeat-x;
+}
+
+// ライブラリ
+
+.library{
+  
+  justify-content: space-around;
+}
+iframe{
+  margin-right: 5px;
 }
 
 // ログイン、新規登録

@@ -6,7 +6,7 @@ class LogsController < ApplicationController
   def index
     @logs = Log.all.includes(
       [:user, :trainings]
-    ).order('created_at DESC')
+    ).page(params[:page]).per(12).order('created_at DESC')
   end
 
   def new

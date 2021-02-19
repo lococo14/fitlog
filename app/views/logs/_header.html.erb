@@ -8,7 +8,7 @@
     <% if user_signed_in? %>
     <ul class="nav navbar-nav ">
       <li class="nav-item active">
-        <a class="nav-link" href="#">ライブラリ</a>
+        <%= link_to 'ライブラリ', page_path('library'),class: 'nav-link' %>
       </li>
       <li class="nav-item active ">
         <%= link_to "投稿する", new_log_path , class: "post", class: "nav-link" %>
