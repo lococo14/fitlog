@@ -56,10 +56,10 @@
        <strong><span class="user-comment">by <%= link_to comment.user.nickname, user_path(comment.user.id), class: 'comment-user' %> </span></strong>
        <% if user_signed_in? && current_user.id == comment.user_id%>
        <span>
-       <%= link_to edit_log_path(@log[:id]) , class:'btn btn-sm btn-outline-secondary text-dark', method: :get do %>
+       <%= link_to edit_log_comment_path([comment.log_id, comment.id ]), class:'btn btn-sm btn-outline-secondary text-dark', method: :get do %>
         <i class="fas fa-pen "></i>
        <% end %>
-       <%= link_to log_path(@log[:id]) , class: "btn btn-sm btn-outline-danger text-dark", method: :delete do %>
+       <%= link_to log_comment_path([:log_id]) , class: "btn btn-sm btn-outline-danger text-dark", method: :delete do %>
         <i class="far fa-trash-alt"></i> 
        <% end %>  
       </span>

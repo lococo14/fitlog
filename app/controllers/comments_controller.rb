@@ -14,12 +14,13 @@ class CommentsController < ApplicationController
   end
    
   def edit
-    @comment = Comment.fing(params[:id])
+    @comment = Comment.find(params[:id])
   end
   
   def destroy
-    @comment = Comment.fing(params[:id])
-    
+    @log = Log.find(params[:log_id])
+    @comment = Comment.find(params[:]
+    redirect_to log_path(@comment.log) if current_user.id == @comment.user_id && @comment.destroy
   end  
   
 
