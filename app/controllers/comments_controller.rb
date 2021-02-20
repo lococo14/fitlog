@@ -13,6 +13,14 @@ class CommentsController < ApplicationController
     end
   end
    
+  def edit
+    @comment = Comment.fing(params[:id])
+  end
+  
+  def destroy
+    @comment = Comment.fing(params[:id])
+    
+  end  
   
 
   private
