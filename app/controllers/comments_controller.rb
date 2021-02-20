@@ -12,10 +12,6 @@ class CommentsController < ApplicationController
       render template: "logs/show"
     end
   end
-   
-  def edit
-    @comment = Comment.find(params[:id])
-  end
   
   def destroy
     comment = Comment.find(params[:id])
