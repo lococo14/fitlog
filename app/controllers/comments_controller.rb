@@ -18,11 +18,11 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @log = Log.find(params[:log_id])
-    @comment = Comment.find(params[:]
-    redirect_to log_path(@comment.log) if current_user.id == @comment.user_id && @comment.destroy
-  end  
-  
+    comment = Comment.find(params[:id])
+    if comment.destroy
+    redirect_to log_path(comment.log)
+    end  
+  end
 
   private
 
