@@ -12,8 +12,13 @@ class CommentsController < ApplicationController
       render template: "logs/show"
     end
   end
-   
   
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+    redirect_to log_path(comment.log)
+    end  
+  end
 
   private
 

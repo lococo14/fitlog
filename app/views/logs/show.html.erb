@@ -54,6 +54,13 @@
       <p>
        <%= comment.text %>
        <strong><span class="user-comment">by <%= link_to comment.user.nickname, user_path(comment.user.id), class: 'comment-user' %> </span></strong>
+       <% if user_signed_in? && current_user.id == comment.user_id%>
+       <span class="delete-btn">
+       <%= link_to comment_path(comment.id) , class: "btn btn-sm btn-outline-danger text-dark", method: :delete do %>
+        <i class="far fa-trash-alt"></i> 
+       <% end %>  
+      </span>
+      <% end %>
       </p>
      </li>
    <% end %>    
