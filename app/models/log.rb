@@ -11,4 +11,13 @@ class Log < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :day
+  
+  def iine(user)
+    likes.create(user_id: user.id)
+  end  
+
+  def uniine(user)
+    likes.find_by(user_id: user.id).destroy
+  end  
+
 end
