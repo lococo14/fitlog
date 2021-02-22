@@ -1,6 +1,6 @@
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :log
-  validates :user_id, presence: true
-  validates :log_id, presence: true
+  
+  validates_uniqueness_of :log_id, scope: :user_id
 end

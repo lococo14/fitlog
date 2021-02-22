@@ -1,11 +1,19 @@
 class LikesController < ApplicationController
+before_action :set_log, only: [:create, :destroy]
+
   def create
-    @log = Log.find(params[:log_id])
-    @log.iine(current_user)
+    @like = Like.create(user_id: current_user.id, log_id: params[:log_id])
   end
 
   def destroy
-    @log = Like.find(params[:id]).log
-    @log.uniine(current_user)
+    like = Like.find_by(user_id: current_user.id, log_id: params[:log_id])
+    like.destroy
   end
+  
+  private
+
+  def set_log
+    @log = Log.find(params[:log_id])
+  end  
+
 end

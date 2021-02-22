@@ -8,16 +8,13 @@ class Log < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :iine_users, through: :likes, source: :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :day
   
-  def iine(user)
-    likes.create(user_id: user.id)
-  end  
-
-  def uniine(user)
-    likes.find_by(user_id: user.id).destroy
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
   end  
 
 end

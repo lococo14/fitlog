@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root 'logs#index'
   resources  :logs do
     resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
   end 
   resources :users, only: :show 
   resources :comments, only: [:destroy]
-  resources :likes, only: [:create, :destroy]
 end
