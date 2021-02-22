@@ -16,6 +16,8 @@ https://fitlog-33471.herokuapp.com/
 
 *投稿機能
 
+![toukou2](https://user-images.githubusercontent.com/70187032/108754861-d9348800-7589-11eb-90da-10c96e1c3bbf.gif)
+
 
 *マイページと詳細ページ
 
