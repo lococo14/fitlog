@@ -13,10 +13,9 @@ https://fitlog-33471.herokuapp.com/
 パスワード: mmmmmm
 
 # デモ
-  
-![Untitled](https://user-images.githubusercontent.com/70187032/108463437-bb350200-72c1-11eb-94bd-c33637f3c4fe.gif)
+
+![mypageto](https://user-images.githubusercontent.com/70187032/108753025-8f4aa280-7587-11eb-8347-7a9a17cc7e6e.gif)
  
-![Untitled2](https://user-images.githubusercontent.com/70187032/108463646-1cf56c00-72c2-11eb-8667-28037f4f32db.gif)
 
 # Features
  
