@@ -7,6 +7,7 @@ class Log < ApplicationRecord
   accepts_nested_attributes_for :trainings, allow_destroy: true
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :day
