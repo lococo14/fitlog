@@ -17,9 +17,10 @@
             <% end %>  
           </div>
           <% end %>  
-          <div id="likes_buttons<%= @log.id %>">
-        <%= render partial: 'likes/like', locals: { log: @log, like: @like} %>
+          <div id="likes_buttons<%= @log.id %>" class="likes_button">
+         <%= render partial: 'likes/like', locals: { log: @log, like: @like} %>
         </div>
+         <span><%= @likes_count %></span>
       </th>
     </tr>
   </thead>

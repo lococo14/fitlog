@@ -26,6 +26,7 @@ class LogsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @log.comments.includes(:user).order('created_at DESC')
+    @likes_count = Like.where(log_id:@log.id).count
   end
 
   def edit

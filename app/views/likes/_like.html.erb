@@ -3,7 +3,7 @@
   <% unless @log.like_user(current_user.id).blank? %>
     <%= link_to log_like_path(log_id: @log.id, id: @log.likes[0].id), method: :delete, remote: true do %>
       <div class="vertical_like">
-      <i class="fa fa-heart fa-sm"></i>
+        <i class="fa fa-heart fa-sm"></i>   
       </div>
     <% end %>
   <% else %>
