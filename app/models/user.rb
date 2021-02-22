@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :logs, dependent: :destroy
   has_many :comments
+  has_many :likes, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
