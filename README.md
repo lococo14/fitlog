@@ -37,5 +37,6 @@ https://fitlog-33471.herokuapp.com/
  
 # データベース設計
 
-![fitlog](https://user-images.githubusercontent.com/70187032/109172584-49c7e880-77c6-11eb-8357-e31da5b70d12.png)
+<img width="555" alt="dio" src="https://user-images.githubusercontent.com/70187032/109173453-310c0280-77c7-11eb-9f9d-bd6a68bde514.png">
+
 
