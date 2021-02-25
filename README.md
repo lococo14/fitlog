@@ -37,57 +37,5 @@ https://fitlog-33471.herokuapp.com/
  
 # データベース設計
 
-## users テーブル
+![fitlog](https://user-images.githubusercontent.com/70187032/109172584-49c7e880-77c6-11eb-8357-e31da5b70d12.png)
 
-| Column             | Type    | Options     |
-| ------------------ | ------  | ----------- |
-| nickname           | string  | null: false |
-| email              | string  | null: false |
-| encrypted_password | string  | null: false |
-| gender             | integer | null: false |
-| profile            | text    | ----------- |
-
-### Association
---has_many :comments
---has_many :logs
-
-## comments テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| text               | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| log                | references | null: false, foreign_key: true |
-
-### Association
---belongs_to :user
---belongs_to :log
-
-## training テーブル
-
-| Column                | Type       | Options                        |
-| --------------------- | ---------- | ------------------------------ |
-| log                   | references | null: false, foreign_key: true |
-| weight_kg             | integer    | null: false                    |
-| weight_lb             | integer    | null: false                    |
-| rep                   | integer    | null: false                    |
-| set_number            | integer    | null: false                    |
-| training              | string     | null: false                    |
-
-### Association
---belongs_to :log
-
-
-
-## log テーブル
-
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| user       | references | null: false, foreign_key: true |
-| title      | string     | null: false                    |
-| day_id     | integer    | null: false                    |
-
-### Association
---belongs_to :user
---has_many :comments
---has_many :trainings
