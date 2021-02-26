@@ -15,4 +15,8 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
+
+  def liked_by?(log_id)
+    likes.where(log_id: log_id).exists?
+  end
 end

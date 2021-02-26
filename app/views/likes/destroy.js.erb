@@ -1,1 +1,1 @@
-document.getElementById('likes_buttons_<%= @log.id %>').innerHTML = '<%= j(render @log) %>'
+document.getElementById('log_<%= @log.id %>').innerHTML = '<%= j(render partial: 'like', locals:{log: @log }) %>'
