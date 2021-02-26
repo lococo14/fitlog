@@ -254,9 +254,6 @@ li{
   background-repeat: repeat-x;
 }
 
-.vertical_like{
-  display: inline-block;
-}
 
 // likes.scss
 
@@ -269,12 +266,14 @@ li{
 }
 
 .like-btn {
-  font-size: 15px;
+  margin-top: 5px;
+  font-size: 20px;
   color: #808080;
 }
  
 .unlike-btn {
-  font-size: 15px;
+  margin-top: 5px;
+  font-size: 20px;
   color: #e54747;
 }
 
