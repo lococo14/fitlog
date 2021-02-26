@@ -1,16 +1,11 @@
-<% if user_signed_in? %>
-
-  <% unless @log.like_user(current_user.id).blank? %>
-    <%= link_to log_like_path(log_id: @log.id, id: @log.likes[0].id), method: :delete, remote: true do %>
-      <div class="vertical_like">
-        <i class="fa fa-heart fa-sm"></i>   
-      </div>
-    <% end %>
-  <% else %>
-    <%= link_to log_likes_path(@log.id), method: :post, remote: true do %>
-      <div class="vertical_like">
-       <i class="fa fa-heart fa-sm"></i>
-      </div>
-    <% end %>
+<% if current_user.liked_by?(log.id) %>
+  <%= link_to destroy_like_path(log), class: 'like-link', method: :DELETE, remote: true do %>
+    <i class="fa fa-heart unlike-btn"></i>
   <% end %>
+  <%= log.likes.count %>
+<% else %>
+  <%= link_to create_like_path(log), class: 'like-link', method: :POST, remote: true do %>
+    <i class="fa fa-heart like-btn"></i>
+  <% end %> 
+  <%= log.likes.count %>  
 <% end %>

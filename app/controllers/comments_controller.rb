@@ -4,20 +4,18 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.valid?
-       @comment.save
-       redirect_to log_path(@comment.log)
+      @comment.save
+      redirect_to log_path(@comment.log)
     else
       @log = @comment.log
       @comments = @log.comments
-      render template: "logs/show"
+      render template: 'logs/show'
     end
   end
-  
+
   def destroy
     comment = Comment.find(params[:id])
-    if comment.destroy
-    redirect_to log_path(comment.log)
-    end  
+    redirect_to log_path(comment.log) if comment.destroy
   end
 
   private
