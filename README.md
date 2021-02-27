@@ -53,14 +53,12 @@ https://fitlog-33471.herokuapp.com/
 
 <img width="1440" alt="マイページ" src="https://user-images.githubusercontent.com/70187032/109391159-18335680-7959-11eb-8caa-f1193c194fbc.png">
 
-*詳細ページ(詳細ページでその投稿の編集、削除、コメントができる。いいね機能)
-
+*詳細ページ(詳細ページでその投稿の編集、削除、コメントができる。いいね機能)  
 ![syousai](https://user-images.githubusercontent.com/70187032/109391354-fdadad00-7959-11eb-8464-4b1fc4ade995.gif)
 
-*ライブラリ機能
+*ライブラリ機能(フォームの確認がすぐできるように動画を見れるページ)  
+ ![library](https://user-images.githubusercontent.com/70187032/109391532-e9b67b00-795a-11eb-8fa8-15d66ba9a400.gif)
  
- 
-
 # Features
  
 海外（アメリカ）のジムでトレーニングする時にも困らないように、キロからパウンドに変換、保存できる。
