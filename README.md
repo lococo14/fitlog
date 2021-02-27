@@ -59,11 +59,28 @@ https://fitlog-33471.herokuapp.com/
 *ライブラリ機能(フォームの確認がすぐできるように動画を見れるページ)  
  ![library](https://user-images.githubusercontent.com/70187032/109391532-e9b67b00-795a-11eb-8fa8-15d66ba9a400.gif)
  
-# Features
+# 使用技術（開発環境）  
+
+ ## バックエンド
+ RUby 2.6.5, Ruby on Rails 6.0.0  
  
-海外（アメリカ）のジムでトレーニングする時にも困らないように、キロからパウンドに変換、保存できる。
-ログイン機能をつけ、マイページから、自分の投稿一覧を確認できる
-ライブラリ機能で、どこでもフォームの確認がすぐにできる。
+ ## フロントエンド
+ HTML,Sass,Javascript,JQuery,Ajax,Bootstrap4.3  
+ 
+ ## データベース
+ MySQL,SequelPro
+ 
+ ## インフラ
+ Heroku
+ 
+ ## ソース管理
+ Github,GitHubDesktop
+ 
+ ## テスト
+ Rspec
+ 
+ ## エディタ
+ VScode
  
 # Usage
 
