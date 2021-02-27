@@ -44,7 +44,7 @@ https://fitlog-33471.herokuapp.com/
 
 ![toppage](https://user-images.githubusercontent.com/70187032/109390961-fab1bd00-7957-11eb-9871-a6020811fdfa.gif)
 
-*投稿機能
+*投稿機能（まず何のトレーニングの日か選んだ後、その日にこなした種目数に応じてフォームを追加できる。キロを入力すると自動的に隣のポンドにも数値が計算され入力される）
 
 ![toukou2](https://user-images.githubusercontent.com/70187032/108754861-d9348800-7589-11eb-90da-10c96e1c3bbf.gif)
 
