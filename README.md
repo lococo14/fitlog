@@ -51,7 +51,7 @@ https://fitlog-33471.herokuapp.com/
 
 *マイページ機能（マイページで自分の投稿したログ一覧と、プロフィールが確認できる）
 
-<img width="1440" alt="マイページ" src="https://user-images.githubusercontent.com/70187032/109391159-18335680-7959-11eb-8caa-f1193c194fbc.png">
+<img width="640" alt="マイページ" src="https://user-images.githubusercontent.com/70187032/109391159-18335680-7959-11eb-8caa-f1193c194fbc.png">
 
 *詳細ページ(詳細ページでその投稿の編集、削除、コメントができる。いいね機能)  
 ![syousai](https://user-images.githubusercontent.com/70187032/109391354-fdadad00-7959-11eb-8464-4b1fc4ade995.gif)
