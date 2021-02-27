@@ -12,6 +12,20 @@ https://fitlog-33471.herokuapp.com/
 
 パスワード: mmmmmm
 
+# 機能一覧
+
+・ユーザー新規登録、ログイン機能(devise)  
+・投稿機能  
+　　 動的追加フォーム(cocoon,jquery)  
+    kgからlbへの計算、表示機能(javascript)  
+・いいね機能(Ajax)  
+・マイページ機能  
+　　投稿の編集、削除  
+・コメント機能  
+　　コメント削除機能  
+・ページネーション機能(kaminari)  
+・ライブラリ機能(high_voltage)  
+
 # デモ
 
 *投稿機能
