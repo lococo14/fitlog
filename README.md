@@ -49,9 +49,9 @@ https://fitlog-33471.herokuapp.com/
 ![toukou2](https://user-images.githubusercontent.com/70187032/108754861-d9348800-7589-11eb-90da-10c96e1c3bbf.gif)
 
 
-*マイページと詳細ページ
+*マイページ
 
-![mypageto](https://user-images.githubusercontent.com/70187032/108753025-8f4aa280-7587-11eb-8347-7a9a17cc7e6e.gif)
+
  
 
 # Features
