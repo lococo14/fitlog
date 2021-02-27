@@ -49,7 +49,11 @@ https://fitlog-33471.herokuapp.com/
 ![toukou2](https://user-images.githubusercontent.com/70187032/108754861-d9348800-7589-11eb-90da-10c96e1c3bbf.gif)
 
 
-*マイページ
+*マイページ機能（マイページで自分の投稿したログ一覧と、プロフィールが確認できる）
+
+<img width="1440" alt="マイページ" src="https://user-images.githubusercontent.com/70187032/109391159-18335680-7959-11eb-8caa-f1193c194fbc.png">
+
+*詳細ページ
 
 
  
