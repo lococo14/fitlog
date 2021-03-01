@@ -39,6 +39,8 @@ main{
   background-color: #f0efef;
   flex: 1;
   padding-top: 75px;
+  width: 100vw;
+  height: 100vh;
 }
 
 // index
@@ -105,16 +107,7 @@ a:hover{
     .row{
       text-align: center;
     }
-  // .col-xl-3, .col-md-4, .col-sm-6{
-    //  padding-left:45px;
-  //  }
-  }
-  /*画面幅が781px以上の時*/
-  @media screen and (min-width:781px){
- 
-  
-    }
-    
+  }    
   
 
 // new
