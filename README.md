@@ -1,8 +1,8 @@
-# Fitlog
+# FitLog
  
 <img width="1439" alt="top" src="https://user-images.githubusercontent.com/70187032/108749978-d3d43f00-7583-11eb-84c9-0622cda27077.png">
 
-Fitlogは、世界中どこにいても筋トレを記録投稿できるアプリです！マイページ機能から自分の記録を確認したり、皆の投稿を見てコメントしたりできます。
+FitLogは、世界中どこにいても筋トレを記録投稿できるアプリです！マイページ機能から自分の記録を確認したり、皆の投稿を見てコメントしたりできます。
 
 https://fitlog-33471.herokuapp.com/
 
