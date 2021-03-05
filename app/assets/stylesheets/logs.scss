@@ -203,6 +203,15 @@ a:hover{
   border: tomato solid 2px;
 }
 
+ /*画面幅が480pxまでの時*/
+ @media screen and (max-width:480px){
+  .table{
+    width: 80%;
+    box-sizing: border-box;
+    }
+  }    
+
+
 .log-comments{
   margin-left: 30px;
   margin-top: 200px;
