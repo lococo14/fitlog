@@ -9,7 +9,7 @@
         <div class="col-7">
           <%= f.text_field :title, placeholder: "今日は何のトレーニングの日？", class: 'form-control' %> 
           </div>  
-          <div class="col-2">
+          <div class="col-3">
             <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box form-control", id:"item-category"}) %>
           </div>
          </div> 

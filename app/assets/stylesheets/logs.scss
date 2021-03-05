@@ -186,6 +186,29 @@ a:hover{
   border-color: tomato;
 }
 
+ @media screen and (max-width:480px){
+  .page-heading{
+   margin-top: 35px;
+    }
+    .add_logs{
+      padding-right: 10px;
+      width: 60%;
+    }
+    .unit{
+      display: none;
+    }
+    .form-control{
+      margin-bottom: 5px;
+    }
+    .btn{
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+  }    
+.unit{
+  margin-top: 5px;
+}
+
 // show
 
 .show-main{
