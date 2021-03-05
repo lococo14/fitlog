@@ -248,6 +248,15 @@ a:hover{
   word-wrap: break-word;
 }
 
+@media screen and (max-width:480px){
+  #comment_text{
+    width: 80%;
+    }
+    .comments-list{
+      width: 80%;
+    }
+  }    
+
 .delete-btn{
   float:right;
   margin-right: 20px;
