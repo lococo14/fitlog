@@ -369,6 +369,14 @@ li{
   padding: 30px 20px 90px 20px;
   background-color:#FFC0CB;
 }
+
+@media screen and (max-width:480px){
+  .container-login{
+    width: 80%;
+    }
+  }    
+
+
 .container-signup{
   width: 50%;
   margin-left: auto;
@@ -378,6 +386,13 @@ li{
   padding: 30px 20px 90px 20px;
   background-color:#FFC0CB;
 }
+
+@media screen and (max-width:480px){
+  .container-signup{
+    width: 80%;
+    }
+  }    
+
 
 .login-heading{
   color: tomato;
