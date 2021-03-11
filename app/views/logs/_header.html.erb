@@ -1,12 +1,14 @@
 <header class="header">
   <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="navbar-img">
     <%= link_to image_tag("logo.png", class:'navbar-brand'), "/" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  </div>  
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+   <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
     <% if user_signed_in? %>
-    <ul class="nav navbar-nav ">
+    <ul class="nav navbar-nav ml-auto">
       <li class="nav-item active">
         <%= link_to 'ライブラリ', page_path('library'),class: 'nav-link' %>
       </li>
