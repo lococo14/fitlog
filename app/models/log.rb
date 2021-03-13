@@ -8,6 +8,8 @@ class Log < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :tag_relations, dependent: :destroy
+   has_many :tags, through: :tag_relations
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :day
