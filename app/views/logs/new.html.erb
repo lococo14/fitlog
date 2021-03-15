@@ -12,6 +12,10 @@
           <div class="col-3">
             <%= f.collection_select(:day_id, Day.all, :id, :name, {include_blank: '選択して下さい'}, {class:"select-box form-control", id:"item-category"}) %>
           </div>
+          <div class="col-7">
+          <%= f.text_field :tag_ids, class: "form-control", id: 'tag_ids',
+          placeholder: "タグをつける。複数つけるには、','で区切ってください。"%>
+          </div>
          </div> 
       <div class="add_logs">
       <%= f.fields_for :trainings, @log.trainings.build do |form| %>

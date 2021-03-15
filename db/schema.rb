@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_124756) do
+ActiveRecord::Schema.define(version: 2021_03_13_121140) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
@@ -39,6 +39,22 @@ ActiveRecord::Schema.define(version: 2021_02_22_124756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
+  create_table "tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "log_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["log_id", "tag_id"], name: "index_tag_relations_on_log_id_and_tag_id", unique: true
+    t.index ["log_id"], name: "index_tag_relations_on_log_id"
+    t.index ["tag_id"], name: "index_tag_relations_on_tag_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,5 +87,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_124756) do
   add_foreign_key "comments", "logs"
   add_foreign_key "comments", "users"
   add_foreign_key "logs", "users"
+  add_foreign_key "tag_relations", "logs"
+  add_foreign_key "tag_relations", "tags"
   add_foreign_key "trainings", "logs"
 end
