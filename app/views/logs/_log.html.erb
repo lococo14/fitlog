@@ -6,6 +6,9 @@
           <span class="training-name"><%= link_to log.title, log_path(log[:id]), method: :get, class: 'log-title' %>の日</span>
           <span class="training-day">（<%= log.day.name %>）</span>
           <span class="user-name">by <%= link_to "#{log.user.nickname}", user_path(log.user.id), class: 'log-user'%></span>
+          <% log.tags.each do |tag|%>
+            <%= tag.name %>
+          <% end %>  
         </div> 
         <% log.trainings.each do |training| %>
         <ul class="list-group list-group-flush"> 
